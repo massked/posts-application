@@ -8,11 +8,9 @@ const userSchema = mongoose.Schema({
     name: {
         firstName: String,
         lastName: String,
-        require: true
     },
     password: {
         type: String,
-        require: false
     },
     posts: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -22,4 +20,4 @@ const userSchema = mongoose.Schema({
     timestamp: true
 });
 
-module.exports = mongoose.model('User', userSchem);
+module.exports = mongoose.model('User', userSchema);

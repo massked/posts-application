@@ -52,12 +52,12 @@ router.post('/', async (req, res) => {
             firstName: req.body.name.firstName,
             lastName: req.body.name.lastName
         },
-        author: req.body.author._id
+        posts: req.body.posts
     });
 
     try {
-        const savedPost = await post.save();
-        res.json(savedPost);
+        const savedUser = await user.save();
+        res.json(savedUser);
     } catch (err) {
         res.json({ message: err });
     }

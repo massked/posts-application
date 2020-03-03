@@ -2,15 +2,20 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 require('dotenv/config');
 
 //Convert to JSON
 app.use(bodyParser.json());
+app.use(cors());
+app.use(express.static(__dirname + '/public'));
 
 //Import Routes
 const postsRoute = require('./routes/posts');
+const usersRoute = require('./routes/users');
 
 app.use('/posts', postsRoute);
+app.use('/users', usersRoute);
 
 //ROUTES
 
